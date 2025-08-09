@@ -1,0 +1,119 @@
+<p>ng-if works!</p>
+
+<h1>Task1</h1>
+<input type="radio" (click)="gender ='male'" />Male
+<button type="radio" (click)="gender ='female'" gender="female">FeMale</button>
+
+
+<p *ngIf="gender == 'male'">YOu seleted male</p>
+<p *ngIf="gender == 'female'">YOu seleted female</p>
+
+<h2>Task2</h2>
+<input type="button" value="Mobile" (click)="setItems(['Sony', 'Philips', 'Motorola', 'Micromax'])">
+<input type="button" value="Laptop" (click)="setItems(['Sony', 'Lenovo', 'HP', 'Acer'])">
+<input type="button" value="Camera" (click)="setItems(['Canon', 'Nikon', '', ''])">
+
+<div *ngFor="let item of items">
+  <p>{{ item }}</p>
+</div>
+<h3>Task3</h3>
+
+<div *ngIf="div1">Div 1</div>
+
+<input type="button" value="show" (click)="div1=true">
+<input type="button" value="hide" (click)="div1=false">
+
+
+<button (click)="div2 = !div2" class="toggle-btn">
+  Show /Hide
+</button>
+
+<div *ngIf="div2">
+  Tis is div2
+</div>
+
+
+<input type="number" placeholder="Enter your text" [(ngModel)]="num1" />
+<input type="number" placeholder="Enter your text" [(ngModel)]="num2" />
+<div *ngIf="div3">
+  This is div3 – both numbers match!
+</div>
+
+<h4>Task 4</h4>
+
+<input type="text" [(ngModel)]="fName" placeholder="First Name" />
+<input type="text" [(ngModel)]="sName" placeholder="Last Name" />
+
+<p>Full Name</p>
+<input type="text" [value]="fName + ' ' + sName" disabled>
+
+<p>State</p>
+<select name="country">
+  <option>INdia</option>
+  <option>Pakistan</option>
+  <option>uS</option>
+</select>
+<p>City</p>
+<select name="city">
+  <option disabled selected>Select city</option>
+  <option>Mathura</option>
+  <option>Vrindaban</option>
+  <option>Agra</option>
+</select>
+
+<p>What are you as profetional</p>
+
+<input type="checkbox" [(ngModel)]="teacher" (change)="selectOnly('teacher')" /> Teacher
+<input type="checkbox" [(ngModel)]="sportPerson" (change)="selectOnly('sportPerson')" /> sportPerson
+<input type="checkbox" [(ngModel)]="Musician" (change)="selectOnly('Musician')" /> Musician
+
+<div class="row" *ngIf="teacher">
+  Subject you can teach
+  <input type="text" />
+  Higest education
+  <input type="text" />
+  Age
+  <input type="text" />
+</div>
+<div class="row" *ngIf="sportPerson">
+  Sports ur in good
+  <input type="text" />
+  Higet
+  <input type="text" />
+  Weight
+  <input type="text" />
+</div>
+<div class="row" *ngIf="Musician">
+  Instrument you play
+  <input type="text" />
+  Any major achivment
+  <input type="text" />
+</div>
+
+
+<h5>Task5</h5>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Sr</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Attendance</th>
+      <th>Gender</th>
+      <th>Is Indian</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of student; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ s.name }}</td>
+      <td >{{s.age>20 ? 'Low' : s.age}}</td>
+      <td>{{ s.attendance }}</td>
+      <td>{{ s.gender =='m' || s.gender == 'M' ? 'Male' : 'Female' }}</td>
+      <td>{{ s.isIndian  ==  'Yes' ? 'Indian ' : 'Froeigner'}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="student?.length === 0">No data found.</p>

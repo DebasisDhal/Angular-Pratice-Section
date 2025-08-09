@@ -1,0 +1,46 @@
+<p>ng-forms works!</p>
+
+<div class="center-page" style="cursor:pointer">
+<p>ng-forms works!</p>
+
+<div class="center-page" style="cursor:pointer">
+  <form [formGroup]="angForm" (ngSubmit)="onSubmit()" class="hover-animate">
+
+    <label>Name</label><br>
+    <input type="text" formControlName="name" /><br>
+
+    <label>Who are you</label>
+    <div class="row">
+      <div style="border: 1px solid black;" (click)="setActivity('Sport Person')">🏃‍♂️ Sport Person</div>
+      <div style="border: 1px solid black;" (click)="setActivity('Teacher')">🤶 Teacher</div>
+    </div>
+    <div class="row">
+      <div style="border: 1px solid black;" (click)="setActivity('Banker')">👴 Banker</div>
+      <div style="border: 1px solid black;" (click)="setActivity('Musician')">👩‍⚖️ Musician</div>
+    </div>
+
+    <label>Gender</label>
+    <div class="row">
+      <div style="border: 1px solid black;" (click)="setGender('Male')">👨‍⚕️ Male</div>
+      <div style="border: 1px solid black;" (click)="setGender('Female')">👩‍⚕️ Female</div>
+    </div>
+
+    <label>Your Age</label>
+    <div class="row">
+      <button type="button" (click)="changeAge(1)">+</button>
+      <label>{{ angForm.get('age')?.value }}</label>
+      <button type="button" (click)="changeAge(-1)">-</button>
+    </div>
+
+    <button type="button" (click)="init()">Reset</button>
+    <button type="submit" (click)="onSubmit()">Submit</button>
+  </form>
+</div>
+
+<p>{{ formObj | json }}</p>
+
+</div>
+
+
+<span class="hover-animate">Hover me</span>
+

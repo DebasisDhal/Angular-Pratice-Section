@@ -1,0 +1,83 @@
+<p>ng-class works!</p>
+
+<h1>Task 1</h1>
+<div [ngClass]="appliedClass">
+    Tis is div
+</div>
+
+<h2> Task 2</h2>
+
+<span [ngClass]="colourChange">My Div Area</span>
+<button (click)="toggleColour()">Toggle Class</button>
+
+<h2> Task 3</h2>
+
+<span [ngStyle]="{'background-color':colourChanges}">My Div Area</span>
+<button (click)="toggleColours('green')">Green</button>
+<button (click)="toggleColours('red')">Red</button> <br>
+
+
+<button 
+  *ngFor="let i of language" 
+  (click)="selectLang = i" 
+  [ngStyle]="{'background-color': selectLang === i ? 'red' : 'green'}">
+  {{i}}
+</button>
+
+<h3> Task 5</h3>
+
+<table>
+    <thead>
+        <th>srno</th>
+        <th>language</th>
+    </thead>
+<tbody *ngFor="let item of languagess" 
+       (click)="selectItem(item.id)" 
+       [ngStyle]="{'background-color': item.id === selectedId ? 'red' : 'transparent'}">
+  <tr>
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+  </tr>
+</tbody>
+
+</table>
+
+
+<h2>Search Programming Languages</h2>
+
+<input type="text" [(ngModel)]="searchTerm" placeholder="Search here..." />
+
+<ul>
+  <li *ngFor="let lang of filteredLanguages">
+    {{ lang.name }}
+  </li>
+</ul>
+
+<p *ngIf="filteredLanguages.length === 0">No results found.</p>
+
+
+<h1>Ng Style</h1>
+
+<div [ngStyle]="boxStyle()">
+  This is style box
+</div>
+
+<input type="text" placeholder="width" [(ngModel)]="width"/>
+<input type="text" placeholder="input height" [(ngModel)]="height"/>
+<label>Border Radius:
+  <input type="text" [(ngModel)]="borderRadius" placeholder="e.g., 15px" />
+</label><br><br>
+
+<label>Background Color:
+  <input type="text" [(ngModel)]="backgroundColor" placeholder="e.g., coral" />
+</label><br><br>
+
+
+
+<h2>Task 2</h2>
+
+<div class="progress-container">
+  <div class="progress-bar" [style.width.%]="progressValue">{{progressValue}}%</div>
+</div>
+
+<input type="number" [(ngModel)]="progressValue" min="0" max="100" />

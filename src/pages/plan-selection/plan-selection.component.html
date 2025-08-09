@@ -1,0 +1,72 @@
+<p>plan-selection works!</p>
+<div style="display:flex; justify-content: center;">
+  <div class="hover-animate">
+    <div class="package-card">
+      <p class="task-title">Task 1</p>
+      <h2>Package</h2>
+      <h4>JavaScript, Angular, Reactjs</h4>
+
+      <div class="options">
+        <div class="option">
+          <i class="icon">📱</i>
+          <p>Mobile</p>
+          <button [ngClass]="selectedOption === 'mobile' ? 'btn green' : 'btn blue'  " (click)="showMore('mobile')">Find More</button>
+        </div>
+
+        <div class="option">
+          <i class="icon">🏠</i>
+          <p>JioFiber</p>
+          <button [ngClass]="selectedOption === 'home' ? 'btn green' : 'btn blue'" (click)="showMore('home')">Find More</button>
+        </div>
+
+        <div class="option">
+          <i class="icon">💼</i>
+          <p>Business</p>
+          <button [ngClass]="selectedOption === 'business' ? 'btn green' : 'btn blue'"(click)="showMore('business')">Find More</button>
+        </div>
+      </div>
+
+      <p class="desc" *ngIf="selectedOption == 'mobile'">Free SIM, calls, and SMS with invaluable digital experiences.</p>
+      <p class="price" *ngIf="selectedOption == 'mobile'">2000/month</p>
+      <p class="desc" *ngIf="selectedOption == 'home'">Connected living experiences with superfast home internet.</p>
+      <p class="price" *ngIf="selectedOption == 'home'">1500/month</p>
+      <p class="desc" *ngIf="selectedOption == 'business'">Enterprise-grade digital services to meet all your business needs.</p>
+      <p class="price" *ngIf="selectedOption == 'business'">4000/month</p>
+    </div>
+  </div>
+  <div class="hover-animate">
+    <div class="package-card">
+      <p class="task-title">Task 1</p>
+      <h2>Package</h2>
+      <h4>JavaScript, Angular, Reactjs</h4>
+
+      <div class="options">
+        <div class="option">
+          <i class="icon">📱</i>
+          <p>Mobile</p>
+          <button [ngClass]="selectedOption === 'mobile' ? 'btn green' : 'btn blue'  " (click)="showMore('mobile')">Find More</button>
+        </div>
+
+        <div class="option">
+          <i class="icon">🏠</i>
+          <p>JioFiber</p>
+          <button [ngClass]="selectedOption === 'home' ? 'btn green' : 'btn blue'" (click)="showMore('home')">Find More</button>
+        </div>
+
+        <div class="option">
+          <i class="icon">💼</i>
+          <p>Business</p>
+          <button [ngClass]="selectedOption === 'business' ? 'btn green' : 'btn blue'"(click)="showMore('business')">Find More</button>
+        </div>
+      </div>
+
+      <p class="desc" *ngIf="selectedOption == 'mobile'">Free SIM, calls, and SMS with invaluable digital experiences.</p>
+      <p class="price" *ngIf="selectedOption == 'mobile'">2000/month</p>
+      <p class="desc" *ngIf="selectedOption == 'home'">Connected living experiences with superfast home internet.</p>
+      <p class="price" *ngIf="selectedOption == 'home'">1500/month</p>
+      <p class="desc" *ngIf="selectedOption == 'business'">Enterprise-grade digital services to meet all your business needs.</p>
+      <p class="price" *ngIf="selectedOption == 'business'">4000/month</p>
+    </div>
+  </div>
+
+</div>

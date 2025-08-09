@@ -1,0 +1,25 @@
+.toggle-btn {
+  background-color: #2e8b57; /* Green background */
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  line-height: 1.4;
+  white-space: nowrap;
+  font-family: sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn:hover {
+  background-color: #256b45;
+}
+
+.content-box {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}

@@ -1,0 +1,63 @@
+<p>ng-for works!</p>
+
+
+<input type="text" placeholder="Enter city" [(ngModel)]="Ad"/> <button (click)="addCity()">Add City</button>
+
+
+    <select >
+        <option selected disabled>Select City</option>
+        <option *ngFor="let item of AddCity">{{item}}</option>
+        
+        </select>
+<p>count city {{AddCity.length}}</p>
+
+<h2>Task 2</h2>
+
+<button (click)="selction(item.id)" *ngFor="let item of languages" [ngStyle]="{ 'background-color': selectedId === item.id ? 'green' : 'white'}">{{item.name}}</button>
+
+<h3>Task 3</h3>
+
+<input type="number" [(ngModel)]="table" placeholder="Enter number" />
+<button (click)="onTable()">Print Table</button>
+
+<p *ngFor="let i of inTable">
+  {{ table }} × {{ i }} = {{ table * i }}
+</p>
+
+<h4>Task 5</h4>
+
+<table border="1">
+  <thead>
+    <tr>
+          <th>Srno</th>
+  <th>pageUrl</th>
+  <th>Link Txt</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of videoUrl; let i = index" [ngStyle]="{ 'background-color': i === videoUrl.length -1 ? 'red' :( i ===0 ? 'green':'transplant') }">
+    <td>{{i}}</td>
+    <td>{{item.pageUrl}}</td>
+    <td>{{item.linkText}}</td>
+  </tr></tbody>
+  
+</table>
+
+<h5>Task 6</h5>
+
+choose the state
+<select [(ngModel)]="selectedStateId" >
+  <option [ngValue]="null">Choose the State</option>
+  <option *ngFor="let item of state" [value]='item.id'>{{item.states}}</option>
+</select>
+
+<span>{{selectedStateId}}</span>
+
+choose the city
+<select #citySelected (change)="getSelectedData(citySelected.value)">
+  <option>Choose the city</option>
+  <option *ngFor="let item of city" [value]="item.id">{{item.states}}</option>
+</select>
+
+<span>{{selectedCityId}}</span>

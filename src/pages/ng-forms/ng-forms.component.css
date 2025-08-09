@@ -1,0 +1,26 @@
+
+
+.hover-animate {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+.hover-animate:hover {
+  background-color: #e0f7fa;
+  box-shadow: 0 4px 12px rgba(0, 150, 136, 0.3);
+  transform: scale(1.05);
+  color: #00796b;
+}
+
+.center-page {
+  display: flex;
+  justify-content: center;
+  /* align-items: center;
+  height: 100vh; 
+  background-color: #f0f0f0; */
+}
+
